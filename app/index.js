@@ -11,6 +11,11 @@ require('./index.css');
 class App extends React.Component {
   // render method returns the specific UI of component
   render() {
-    return <div>Hello World</div>;
+    return <div>Hello React Training</div>;
   }
 }
+
+// First argument what we want to render
+// Second where we want to render to - here it is the div with ID of 'app'
+// To invoke a component we use - <App />
+ReactDOM.render(<App />, document.getElementById('app'));
