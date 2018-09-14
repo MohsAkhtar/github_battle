@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/MohsAkhtar/github_battle#readme",
   "dependencies": {
+    "axios": "^0.18.0",
     "react": "^16.5.0",
     "react-dom": "^16.5.0"
   },
