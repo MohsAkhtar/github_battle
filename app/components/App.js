@@ -1,4 +1,8 @@
 var React = require('react');
+var ReactRouter = require('react-router-dom');
+var Router = ReactRouter.BrowserRouter;
+var Route = ReactRouter.Route;
+var Nav = require('./Nav');
 var Popular = require('./Popular');
 
 // original way createClass() is deprecated new way is JS class
@@ -7,9 +11,12 @@ class App extends React.Component {
   // render method returns the specific UI of component
   render() {
     return (
-      <div className="container">
-        <Popular />
-      </div>
+      <Router>
+        <div className="container">
+          <Nav />
+          <Route path="/popular" component={Popular} />
+        </div>
+      </Router>
     );
   }
 }
