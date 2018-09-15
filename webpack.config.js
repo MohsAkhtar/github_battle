@@ -17,6 +17,7 @@ module.exports = {
   devServer: {
     historyApiFallback: true
   },
+  mode: process.env.NODE_ENV === 'production' ? 'production' : 'development',
   plugins: [
     new HtmlWebpackPlugin({
       template: 'app/index.html'
