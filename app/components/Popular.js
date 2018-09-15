@@ -1,6 +1,7 @@
 var React = require('react');
 var PropTypes = require('prop-types');
 var api = require('../utils/api');
+var Loading = require('./Loading');
 
 // because we are not using this anywhere else we dont need to make a seperate file for this component
 // also it is a 'stateless functional component' so we can just pass in props from the outside state
@@ -123,7 +124,7 @@ class Popular extends React.Component {
           onSelect={this.updateLanguage}
         />
         {!this.state.repos ? (
-          <p>LOADING</p>
+          <Loading text="LOADING" speed={100} />
         ) : (
           <RepoGrid repos={this.state.repos} />
         )}
