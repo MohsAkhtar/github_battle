@@ -25,7 +25,7 @@ function getRepos(username) {
   );
 }
 
-function getStarCOunt(repos) {
+function getStarCount(repos) {
   // reduce allows us to take an array an reduce it to a single value
   // so we are looking at all the repo data and reducing all the star counts to one value
   return repos.data.reduce(function(count, repo) {
@@ -35,7 +35,7 @@ function getStarCOunt(repos) {
 
 // algorithm to calculate who wins battle
 function calculateScore(profile, repos) {
-  var followers = preofile.followers;
+  var followers = profile.followers;
   var totalStars = getStarCount(repos);
 
   return followers * 3 + totalStars;
@@ -52,7 +52,7 @@ function getUserData(player) {
   // we asynchronously call these promises
   // its going to call a function and passes the array to that function
   return axios.all([getProfile(player), getRepos(player)]).then(function(data) {
-    var profie = data[0];
+    var profile = data[0];
     var repos = data[1];
 
     // return an object
